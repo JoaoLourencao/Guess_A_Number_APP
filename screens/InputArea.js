@@ -40,7 +40,7 @@ const InputArea = props => {
             <Card style={styles.summaryContainer}>
                 <Text>Número escolheu</Text>
                 <NumberContainer>{selectedNumber}</NumberContainer>
-                <Button title="COMEÇAR" color={Colors.primary}/>
+                <Button title="COMEÇAR" onPress={() => props.onStartGame(selectedNumber)} color={Colors.primary}/>
             </Card>
         );
     }
