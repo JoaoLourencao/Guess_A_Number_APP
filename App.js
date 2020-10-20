@@ -8,6 +8,7 @@ import InputArea from './screens/InputArea';
 export default function App() {
   return (
     <View style={styles.screen}>
+        <StatusBar style="light"/>
         <Header title="Adivinhe o número"/>
         <InputArea/>
     </View>
