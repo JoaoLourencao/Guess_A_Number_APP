@@ -5,6 +5,7 @@ import Input from '../components/Input';
 import Card from '../components/Card';
 import Colors from '../constants/colors';
 import NumberContainer from '../components/NumberContainer';
+import MainButton from '../components/MainButton';
 
 const InputArea = props => {
 
@@ -40,7 +41,9 @@ const InputArea = props => {
             <Card style={styles.summaryContainer}>
                 <Text>Número escolheu</Text>
                 <NumberContainer>{selectedNumber}</NumberContainer>
-                <Button title="COMEÇAR" onPress={() => props.onStartGame(selectedNumber)} color={Colors.primary}/>
+                <MainButton onPress={() => props.onStartGame(selectedNumber)} color={Colors.primary}>
+                    COMEÇAR JOGO
+                </MainButton>
             </Card>
         );
     }
@@ -53,7 +56,7 @@ const InputArea = props => {
                 <Text style={styles.title}>Comece um novo jogo!</Text>
                 <Card style={styles.inputContainer}>
                     <View style={styles.inputContainer}>
-                        <Text>Selecion um número</Text>
+                        <Text>Digite um número</Text>
                         <Input style={styles.Input} blurOnSubmit autoCapitalize='none' autoCorrect={false} keyboardType="number-pad" maxLength={2} onChangeText={numberInputHandler} value={entredValue}/>
                         <View style={styles.btnContainer}>
                             <View style={styles.btnActions}><Button title="Limpar" onPress={resetInputHandler} color={Colors.secondary} /></View>
@@ -77,6 +80,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         marginVertical: 10,
+        fontFamily: 'open-sans-bold'
     },
     btnContainer: {
         flexDirection: 'row',

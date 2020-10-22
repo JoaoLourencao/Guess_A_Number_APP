@@ -1,8 +1,11 @@
 import React, {useState, useRef, useEffect} from 'react';
 import { Alert, View, TextInput, StyleSheet, Text, Button, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
 
 import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
+import MainButton from '../components/MainButton';
 import Input from '../components/Input';
 import Colors from '../constants/colors';
 
@@ -53,8 +56,12 @@ const GameScreen = props => {
             <Text>Resposta do oponente</Text>
             <NumberContainer>{currentGuess}</NumberContainer>
             <Card style={styles.btnContainer}>
-                <Button title="MENOR" onPress={nextGuessHandler.bind(this, 'lower')}/>
-                <Button title="MAIOR" onPress={nextGuessHandler.bind(this, 'greater')}/>
+                <MainButton onPress={nextGuessHandler.bind(this, 'lower')}>
+                    <Ionicons name="md-remove" size={24} color="white"/>
+                </MainButton>
+                <MainButton onPress={nextGuessHandler.bind(this, 'greater')}>
+                    <Ionicons name="md-add" size={24} color="white"/>
+                </MainButton>
             </Card>
         </View>
     );
